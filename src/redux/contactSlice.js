@@ -1,15 +1,23 @@
-import {createSlice, createEntityAdapter} from '@reduxjs/toolkit';
+import {createSlice, createEntityAdapter} from "@reduxjs/toolkit";
 
- export const contactAdaptor = createEntityAdapter()
-const initialState = contactAdaptor.getInitialState()
+export const contactAdapter = createEntityAdapter();
+
+const initialState = contactAdapter.getInitialState();
+
+export const contactSelector = contactAdapter.getSelectors(state => state.contacts );
+
+
 const contactSlice = createSlice({
-    name: 'contact',
+    name: "contacts",
     initialState,
-    reducers: {
-        addContact: contactAdaptor.addOne,
-        addContacts: contactAdaptor.addMany,
-    }
 
+    //reducers altındakiler action'larımız.
+    reducers: {
+        addContact: contactAdapter.addOne, //addOne entityAdapter ile geliyor.
+        addContacts: contactAdapter.addMany, //birden fazla ekleme yapmak için.
+    },
+ 
 })
+
 export const {addContact, addContacts} = contactSlice.actions;
 export default contactSlice.reducer;
