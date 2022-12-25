@@ -15,9 +15,11 @@ const contactSlice = createSlice({
     reducers: {
         addContact: contactAdapter.addOne, //addOne entityAdapter ile geliyor.
         addContacts: contactAdapter.addMany, //birden fazla ekleme yapmak için.
+        deleteContact: contactAdapter.removeOne, // removeOne entityAdapter ile geliyor.
+        removeAllContacts: contactAdapter.removeAll // hepsini silmek için.
     },
  
 })
 
-export const {addContact, addContacts} = contactSlice.actions;
+export const {addContact, addContacts,deleteContact, removeAllContacts} = contactSlice.actions;
 export default contactSlice.reducer;

@@ -57,11 +57,14 @@ ul, li {
   cursor: pointer;
 }
 
-.removeAllBtn{
+.deleteAllBtn{
   text-align: right;
   cursor: pointer;
+  
+  color: blue;
 }
 
-.removeAllBtn:hover {
+.deleteAllBtn:hover {
   text-decoration: underline;
+  color: red;
 }
